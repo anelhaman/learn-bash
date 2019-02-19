@@ -1,5 +1,11 @@
 #!/bin/bash 
-
+exist_program(){
+  if ! [ -x "$(command -v say)" ]; then
+    echo 'Error: say is not installed.\r\n Try to install espeak first' >&2
+    exit 1
+  fi
+  break;
+}
 clear_screen(){
   clear;
 }
@@ -64,4 +70,5 @@ main(){
      fi
   done
 }
+exist_program;
 main;
